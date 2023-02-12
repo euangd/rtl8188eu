@@ -12,18 +12,15 @@ apt update
 # install build dependencies
 apt install -y build-essential dkms
 
-# download RTL8188FTV driver source
-wget https://github.com/lwfinger/rtl8188ftv/archive/master.zip
-
-# extract driver source
-unzip master.zip
+# download RTL8188EU driver source
+git clone https://github.com/lwfinger/rtl8188eu
 
 # build and install driver
-cd rtl8188ftv-master
+cd rtl8188eu-master
 make
 make install
 
 # load the driver module
-modprobe rtl8188ftv
+modprobe rtl8188eu
 
-echo "Completed installing RTL8188FTV drivers,Reboot your pc"
+echo "Completed installing RTL8188EU drivers,Reboot your pc"
